@@ -1,4 +1,4 @@
-### Wafer - Anomaly Detection 
+### Wafer - Anomaly Detection
 
 #### Introduction
 This project is focused
