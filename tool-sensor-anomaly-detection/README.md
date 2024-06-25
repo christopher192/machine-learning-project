@@ -18,6 +18,8 @@ This project is focused to identify anomalies in semiconductor wafer manufacturi
 #### 3. Feature Selection
 #### 4. Hyperparameter Tuning
 #### 5. Model training
+- Isolated forest
+- One class SVM
 #### 6. Model prediction
 #### 7. Anomaly detection
 #### 8. Model explainability
