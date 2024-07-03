@@ -5,25 +5,31 @@ This project is focused to identify anomalies in semiconductor wafer manufacturi
 
 #### 1. Data Preprocessing
  - Rename column
- <br> Columns will be renamed to be readable.
+    1. Columns will be renamed to be readable.
  - Handling missing value
- <br> There are 14,844 rows, columns containing 14,844 `null` will be eliminated.
- <br> Columns containing 14,388 `null` and the rest hold unuseful data will be eliminated.
- <br> Columns containing only a single value will be eliminated as it do not provide useful information for analysis.
- <br> Given sufficent dataset, rows containing `null` values will be removed, resulting in total of 14,388 rows.
-#### 2. Feature Engineering
+    1. There are 14,844 rows, columns containing 14,844 `null` will be eliminated.
+    2. Columns containing 14,388 `null` and the rest hold unuseful data will be eliminated.
+    3. Columns containing only a single value will be eliminated as it do not provide useful information for analysis.
+    4. Given sufficent dataset, rows containing `null` values will be removed, resulting in total of 14,388 rows.
+#### 2. Exploratory Data Analysis
+2.1. Time Series Analytics (Tool Sensor)
+![alt text](image/image-1.png)
+2.2. Categorical Variable Analysis
+![alt text](image/image-2.png)
+
+#### 3. Feature Engineering
  - Data transformation
- <br> Given the high number of features, one hot encoding is impractical.
- <br> Label encoding is used for converting categorical data into a numerical format.
+    1. Given the high number of features, one hot encoding is impractical.
+    2. Label encoding is used for converting categorical data into a numerical format.
  - Data extraction
  <br> 
-#### 3. Feature Selection
-#### 4. Hyperparameter Tuning
-#### 5. Model training
+#### 4. Feature Selection
+#### 5. Hyperparameter Tuning
+#### 6. Model training
 - Isolated forest
 - One class SVM
-#### 6. Model prediction
-#### 7. Anomaly detection
-#### 8. Model explainability
+#### 7. Model prediction
+#### 8. Anomaly detection
+#### 9. Model explainability
 
 #### Result
