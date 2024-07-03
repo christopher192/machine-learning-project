@@ -22,7 +22,6 @@ This project is focused to identify anomalies in semiconductor wafer manufacturi
     1. Given the high number of features, one hot encoding is impractical.
     2. Label encoding is used for converting categorical data into a numerical format.
  - Data extraction
- <br> 
 #### 4. Feature Selection
 #### 5. Hyperparameter Tuning
 #### 6. Model training
