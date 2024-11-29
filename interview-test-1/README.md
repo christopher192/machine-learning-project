@@ -42,3 +42,13 @@ Perform your analysis using Python and provide the code for the solution in a ju
 
 ### <ins>Question 2</ins>
 Figure 1 and Figure 2 are two screenshots from the details page of a footage.
+
+Figure 1
+![](images/screen-1.png)
+
+Figure 2
+![](images/screen-2.png)
+
+Instructions:<br>
+- Write a simple web demo in Python using a large language model (LLM) or (vision-language model) VLM with Langchain (https://python.langchain.com/docs/introduction/) that takes in a video or a video URL that can predict the caption and keywords for a video.
+- Besides using an LLM or VLM, what other approaches are available?
