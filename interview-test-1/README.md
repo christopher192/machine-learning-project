@@ -7,6 +7,9 @@ Questions and contexts:
     ![Overall Drop](images/overall_drop.png)
     <br>2. Overall Drop Table
     ![Overall Drop](images/overall_drop_table.png)
+    <br>3. Percentage drop calculation<br>
+    Formula: Percentage drop = ((Before Start Drop Value−Biggest Drop Value)/Before Start Drop Value)*100<br>
+    ​![Overall Drop](images/percentage_drop_table.png)
 
 - Is the drop attributed to certain countries and/or users? If so, how can we identify them?
 - Is the drop coming from many small downloaders, or coming from few major downloaders?
