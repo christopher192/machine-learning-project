@@ -42,8 +42,9 @@ const Home = (props) => {
             const videoURL = URL.createObjectURL(file);
             setVideoSource(videoURL);
             setKeywordLoading(true);
-        } else if (url) {
+        } else if (url.length > 0) {
             setVideoSource(url);
+            setKeywordLoading(true);
         }
     };
 
@@ -129,6 +130,12 @@ const Home = (props) => {
         };
     }, [videoSource]);
 
+    useEffect(() => {
+        if (file === null) {
+            setKeywords([]);
+        }
+    }, [file]);
+
     return (
         <React.Fragment>
             <div className="page-content">
@@ -164,7 +171,7 @@ const Home = (props) => {
                                 <CardBody className="d-flex flex-column justify-content-center align-items-center">
                                     <Row className="justify-content-center align-items-center">
                                         <Col md={9} className="text-center">
-                                            {videoSource && (
+                                            {videoSource && file && (
                                                 <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
                                                     <video
                                                         ref={videoRef}
@@ -195,17 +202,28 @@ const Home = (props) => {
                                                 </div>
                                             )}
 
-                                            {/* {videoSource && (
+                                            {/* {videoSource && (url.length > 0) && (
                                                 <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
-                                                    <iframe
-                                                        width="100%"
-                                                        height="auto"
-                                                        src={videoSource}
-                                                        frameBorder="0"
-                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowFullScreen
-                                                        title="YouTube Video"
-                                                    ></iframe>
+                                                    <div >
+                                                        <iframe width="500" height="450" src={videoSource} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                                    </div>
+                                                    {caption && (<div
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: '10%',
+                                                            left: '50%',
+                                                            transform: 'translate(-50%, -10%)',
+                                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                                            color: 'white',
+                                                            padding: '10px 20px',
+                                                            borderRadius: '5px',
+                                                            fontSize: '1.2rem',
+                                                            textAlign: 'center',
+                                                        }}
+                                                    >
+                                                            {caption}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             )} */}
                                         </Col>

@@ -83,19 +83,19 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
                             <div className="navbar-brand-box horizontal-logo">
                                 <Link to="/" className="logo logo-dark">
                                     <span className="logo-sm">
-                                        <img src={subway} alt="" height="22" />
+                                        <img src={logoLight} alt="" height="10" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={subway} alt="" height="45" />
+                                        <img src={logoLight} alt="" height="15" />
                                     </span>
                                 </Link>
 
                                 <Link to="/" className="logo logo-light">
                                     <span className="logo-sm">
-                                        <img src={subway} alt="" height="22" />
+                                        <img src={logoLight} alt="" height="10" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={subway} alt="" height="45" />
+                                        <img src={logoLight} alt="" height="15" />
                                     </span>
                                 </Link>
                             </div>
