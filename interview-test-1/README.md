@@ -35,6 +35,17 @@ Questions and contexts:
     </p>
 
 - Is the drop coming from many small downloaders, or coming from few major downloaders?
+    <p float="left">
+        <img src="images/majorvsminor.png" width="45%" />
+    </p>
+    By using the 80th percentile of total downloads, which helps us identify the top downloaders contributing to the most significant share of total downloads. From the chart, major downloaders contribute to significant percentage of the total downloads, hence the drop is coming primarily from a few major downloaders. This suggests that the drop is likely due to a reduction in activity from a few key users (major downloader).
+    <br><br>
+    <p float="left">
+        <img src="images/cumulative_percentage_downloads.png" width="45%" />
+    </p>
+    Based on the result of cumulative percentage of downloads, the result indicates that the top 10% of downloaders contribute only 9.95% of the total downloads. This suggests that the majority of downloads are distributed among users beyond the top 10%. There are more significant contributors in the middle of the distribution or spread across a larger group than just the top 10%
+    <br><br>
+
 - Is the drop coming from the Malaysia market and a result of Malaysian public holidays because the CEO said he saw a drop in download count whenever there is a public holiday.
 - What other insights can you obtain from this analysis?
 
