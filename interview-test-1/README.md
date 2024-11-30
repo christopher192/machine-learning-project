@@ -43,10 +43,16 @@ Questions and contexts:
     <p float="left">
         <img src="images/cumulative_percentage_downloads.png" width="45%" />
     </p>
-    Based on the result of cumulative percentage of downloads, the result indicates that the top 10% of downloaders contribute only 9.95% of the total downloads. This suggests that the majority of downloads are distributed among users beyond the top 10%. There are more significant contributors in the middle of the distribution or spread across a larger group than just the top 10%
+    Based on the result of cumulative percentage of downloads, the result indicates that the top 10% of downloaders contribute only 9.95% of the total downloads. This suggests that the majority of downloads are distributed among users beyond the top 10%. There are more significant contributors in the middle of the distribution or spread across a larger group than just the top 10%.
     <br><br>
 
 - Is the drop coming from the Malaysia market and a result of Malaysian public holidays because the CEO said he saw a drop in download count whenever there is a public holiday.
+    <p float="left">
+        <img src="images/holidayvsnonholiday.png" width="45%" />
+    </p>
+    According to the results, public holidays account for only 1.7% of the total downloads, making it unlikely that the observed drop is due to public holidays.
+    <br><br>
+
 - What other insights can you obtain from this analysis?
 
 Perform your analysis using Python and provide the code for the solution in a jupyter notebook. The fields 'uid' and 'supplier' from downloads table (downloads.csv) correspond to the 'uid' in the member table (member.csv).
