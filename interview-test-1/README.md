@@ -54,6 +54,21 @@ Questions and contexts:
     <br><br>
 
 - What other insights can you obtain from this analysis?
+    <br>Seasonality of downloads insight
+    <p float="left">
+        <img src="images/seasonality.png" width="45%" />
+    </p>
+    Identify if downloads follow seasonal patterns, such as higher activity during certain months or specific times of the year. Observe if there are consistent peaks and valleys across years.
+    
+    <br>Fraud detection insights:
+    Fraud column has only one unique value, there is no sufficient data represented in this column for useful insight.
+
+    <br>Churn rate insight
+    <p float="left">
+        <img src="images/churn.png" width="45%" />
+    </p>
+    A churn rate of 80.30% suggests that a significant portion of users are discontinuing their activity such asnot downloading content anymore. This is potential issues with user retention or the effectiveness of the platform in keeping users engaged.
+    <br><br>
 
 Perform your analysis using Python and provide the code for the solution in a jupyter notebook. The fields 'uid' and 'supplier' from downloads table (downloads.csv) correspond to the 'uid' in the member table (member.csv).
 
