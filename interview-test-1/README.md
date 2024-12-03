@@ -96,3 +96,15 @@ Instructions:<br>
 
 3. Multi-Modal Approach
     <br>Can combine traditional methods for text, visual, and audio data. For example, extract visual features using object detection or action recognition models. Then process audio using speech-to-text model or sound event detection. After that, merge visual and audio outputs to form coherent descriptions with NLP techniques such as N-grams, TF-IDF and Word Embeddings. Finally, use simple NLP techniques such as n-grams, word embeddings, etc to summarize extracted data.
+
+### <ins>Question 3</ins>
+Image outpainting is a generative AI technique used to extend the borders of an image beyond its original frame, filling in new, realistic or stylistically consistent details. The goal is to expand the visual scene in a way that complements the original image’s style, colors, and context. This can be useful for tasks such as enhancing photos, creating wider visuals for social media, and designing artwork with broader scenes.
+
+At the company, we have an AI tool called AI Image Extender and we are trying to improve its performance using better models and image processing techniques.
+
+Instructions:
+<br>● Check out the Github repo https://github.com/xinsir6/ControlNetPlus and build a simple web demo for image outpainting. Users should be able to upload an image, specify which direction to outpaint (left, right, top, bottom, or any combination of them), a prompt and the app should return the generated (outpainted) result.
+<br>● What do you think of the performance of this model? How can we improve it?
+<br>● Outpainting with AI models sometimes produces a color discrepancy issue between the masked areas (pixel values == 255) and unmasked areas (pixel values == 0); refer Fig. 3 and Fig. 4 below. Write a simple web demo using Python that takes in an image and the outpaint mask and outputs a processed image with less color discrepancy between the masked and unmasked areas.
+
+![](images/fig3.png)
