@@ -39,7 +39,7 @@
     - Download `Poppler` from [here](https://github.com/oschwartz10612/poppler-windows).
     - Extract and transfer it to `C:\Program Files\` and add `C:\Program Files\poppler\bin` to the `Path` environment variable.
 
-### Step By Step (Azura)
+### Step By Step (Azure)
 
 ### Purpose
 1. Test applicant's ability to work in `Azure` environment, including working with `Virtual Machines`, generating `SQL` database an running a pipeline.
