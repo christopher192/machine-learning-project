@@ -18,7 +18,7 @@
 2. ChatGPT may be used as guide for this exam, however, Applicant must disclose if/when it was used
 3. Applicant may still submit an alternative localhosted result for Items 2-5, if unable to open Azure account. AWS may also be used.
 
-### Step By Step
+### Step By Step (Local)
 1. Download `Tesseract OCR`
     - Visit [Tesseract OCR GitHub page](https://github.com/UB-Mannheim/tesseract/wiki).
     - Look for the Windows installer section and download the latest `.exe` file suitable for your system (32-bit or 64-bit).
@@ -38,6 +38,8 @@
 6. Install `poppler-windows`
     - Download `Poppler` from [here](https://github.com/oschwartz10612/poppler-windows).
     - Extract and transfer it to `C:\Program Files\` and add `C:\Program Files\poppler\bin` to the `Path` environment variable.
+
+### Step By Step (Azura)
 
 ### Purpose
 1. Test applicant's ability to work in `Azure` environment, including working with `Virtual Machines`, generating `SQL` database an running a pipeline.
