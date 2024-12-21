@@ -40,7 +40,7 @@
     - Extract and transfer it to `C:\Program Files\` and add `C:\Program Files\poppler\bin` to the `Path` environment variable.
 
 docker build -t tesseract-ocr-app .
-docker run tesseract-ocr-app
+docker run -p 8501:8501 tesseract-ocr-app
 docker ps -a
 docker exec -it name-of-container bash
 

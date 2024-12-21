@@ -12,11 +12,16 @@ RUN apt-get update && apt-get install -y \
 
 # install python libraries
 # RUN pip3 install pytesseract pdf2image pillow sqlite3
+RUN pip3 install streamlit
 
 # set the working directory in the container
 WORKDIR /app
 
 # copy local files into the container
 COPY . /app
+# COPY ocr_extraction.py /app/
 
-CMD ["python3", "ocr_extraction.py"]
+# expose port for streamlit
+EXPOSE 8501
+
+CMD ["streamlit", "run", "ocr_extraction.py"]
