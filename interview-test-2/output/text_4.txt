@@ -1,0 +1,68 @@
+EAGE ANNUAL
+
+VIENNA | AUSTRIA
+
+7 P Average Average :
+watt | Deo Field Formations Permeability seat rithotogy
+
+2144.5 - Heidrun 0
+6507/7-6 2189.5 Field Ile Fm Good (25%) | Very Good Claystone Sandstone
+
+6507/2-2 3670 - 3695 Merulk Garn Fm Moderate Claystone Sandstone
+
+2507 - Heidrun . Shaly
+6507/7-10 25315 Field Garn Fm Fair to Good Claystone
+
+Good (160
+mD)
+
+Sandstone
+
+6507/7-5 Heidrun lle Fm Good (24%)
+
+Field Claystone Sandstone
+
+Heidrun Tomma Fm
+
+6507/8-1 Field (Ile Fm)
+
+Moderate Good Claystone Sandstone
+
+Figure 4 Screening CO2 storage candidates based on lithology, average porosity, average permeability,
+and seal characteristics.
+
+Conclusion
+
+The study showcases how a “Double Funnel Approach” through an ML data ingestion pipeline can be an
+efficient screening tool to analyze, review and rank CCS potential using readily available unstructured data.
+In this case, 490,000 pages of documents have been analyzed in 21 days to identify potential CCS
+opportunities below Heidrun producing field, extended across the Froan basin. Additional analysis through
+the “data target” may now be undertaken around Heidrun field on related wells, seismic and interpretation
+data.
+
+To conclude, such an analysis suggests the scalability and the cost effectiveness of the methodology for
+rapidly addressing the requirements of new CCS capabilities to mitigate the impact of the Climate Change.
+
+Acknowledgment
+
+This paper utilizes the data from the Norwegian Petroleum Directorate (NPD) open dataset. Disclaimer of
+those interpretations from the study are from investigation and analysis of the authors alone.
+
+References
+
+Baillard, F., & Hernandez, N. (2021). A Case Study of Understanding the Bonaparte Basin using
+Unstructured Data Analysis with Machine Learning Techniques. EAGE Annual.
+
+Hernandez, M., & Baillard, F. (2019). An effective G&G exploration strategy inspired by a wolfpack.
+FORCE Workshop.
+
+Norwegian Petroleum Directorate. (n.d.). 5 - The Norwegian Sea. Retrieved at January 20, 2023 from
+https://Awww.npd.no/en/facts/publications/co2-atlases/co2-atlas-for-the-norwegian-continental-shelf/5-the-
+
+norwegian-sea/
+
+Norwegian Petroleum Directorate. (n.d.). 4 - The Norwegian North Sea. Retrieved at January 20, 2023
+from https://www.npd.no/en/facts/publications/co2-atlases/co2-atlas-for-the-norwegian-continental-
+shelf/4-the-norwegian-north-sea/
+
+84'* EAGE Annual Conference & Exhibition

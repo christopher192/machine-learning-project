@@ -1,0 +1,63 @@
+EAGE ANNUAL
+
+VIENNA | AUSTRIA
+
+Lithology tab
+Knowledge Graph structural element
+
+‘Aa = :
+
+. i Image search module
+@ Well Summary Tab @ Heat Map 3 Tn search module Ov: findings with @ fguien/veacia/stvatighephic
+
+Figure I Analytical tools used for the case study research strategy for CO2 storage screening
+
+Such a set of tools provides powerful means for understanding and interpreting large and complex sets of
+data. It can help to identify patterns, trends, and relationships that might not be immediately apparent from
+raw data due to the segregation of information in separate files for each well. By narrowing down the scope
+of focus on selected wells, the exclusion of non-relevant well and time frame reduction of the process can
+be accomplished.
+
+In this paper, we propose a new CCS screening workflow called Double Funnel Approach (DFA), seen on
+Figure 2 which consists of a “data sweep” and a “data target”. The “data sweep” aims to reduce all findings
+from all ingested data to key learnings and key wells over the area of interest, allowing to review and rank
+the most suitable field candidates for potential CCS opportunities. The “data target” follows the “data
+sweep” and focuses only on the field selected candidates and aims to refine and enhance the existing
+unstructured data with seismic, logs, interpretation and geomodel data. During this exercise, redundant and
+irrelevant data are removed through efficient automated version indexing and cross-correlation with the
+unstructured data. Finally, the data is now ready for screening for CO2 injection capacity and monitoring
+analysis.
+Unstructured Data Interpretation
+
+Key learnings gant date eet
+Key wells eur wee
+“ ” Key risks “DataTarget” gant
+Data Sweep Key drivers ae Target field for COZ
+BasinMapping gen area storage
+Play Evaluation | cane
+a,
+Reservoir Properties | te
+te Monitor injection in
+
+Seal Properties Depleting fields review CCS wells
+
+“ees
+
+and ranking
+"Elevan t iy Stee,
+BASIN FIELD
+Identify learning over Propagate learning
+sedimentary basins over key depleting
+
+fields
+
+Figure 2 Proposed Double Funnel Approach for CCS Screening Studies
+CCS “data sweep” use case offshore Norway
+
+The ingestion of data for the case study comprises of 490,000 pages and 440,000 images, covering a total
+of 361 wells within 5 basins in Norway consolidating 50 years of exploration, development, and production.
+All these data has been retrieved from the Norwegian Petroleum Directorate (NPD). The “data sweep” of
+the data was completed in 21 days which evaluated various hypothesis and converge on the key learnings,
+key wells, key risks, and key drivers.
+
+84'* EAGE Annual Conference & Exhibition

@@ -1,11 +1,11 @@
-## Hello World
+## Interview Test
 
 ### Introduction
 
 ### Focus Area
-1. Open Azure Account Azure Free Trial | Microsoft Azure. (This is free but will require a credit card account).
-2. Perform OCR Extraction using `Tesseract`, use one PDF Document as input.
-3. Create a Docker Container in `Azure` for `Tesseract`.
+1. Open `Azure Account Azure Free Trial` | `Microsoft Azure`. (This is free but will require a credit card account).
+2. Perform OCR Extraction using `Tesseract`, use one `PDF Document` as input.
+3. Create a `Docker` `Container` in `Azure` for `Tesseract`.
 4. Extract text from the input data, and save in `Azure SQL` database.
 5. Pull the extracted OCR text from SQL database and use as input for chatbot.
 6. Use a pre-trained large language model in Hugging Face, such as OpenAI GPT — transformers 3.5.0 documentation (huggingface.co). Any LLM model may be used, ie BERT, Llama, GPT Mistral etc.
@@ -38,6 +38,11 @@
 6. Install `poppler-windows`
     - Download `Poppler` from [here](https://github.com/oschwartz10612/poppler-windows).
     - Extract and transfer it to `C:\Program Files\` and add `C:\Program Files\poppler\bin` to the `Path` environment variable.
+
+docker build -t tesseract-ocr-app .
+docker run tesseract-ocr-app
+docker ps -a
+docker exec -it name-of-container bash
 
 ### Step By Step (Azure)
 

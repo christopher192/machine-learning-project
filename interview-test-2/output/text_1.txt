@@ -1,0 +1,53 @@
+EAGE ANNUAL
+
+VIENNA | AUSTRIA
+
+Double funnel approach for screening of potential CO2 storage opportunities in the Norwegian
+Continental Shelf
+
+Introduction
+
+Carbon capture and storage (CCS) is a key waste management strategy for reducing carbon dioxide (CO2)
+emissions and mitigating climate change. The Norwegian continental shelfhas significant capacity for CCS,
+as it has several depleted oil and gas fields that can be used for storage of CO2. The field of CCS has seen
+significant growth in recent years, as the need to reduce carbon CO2 emissions becomes increasingly
+urgent. However, despite the increasing number of studies on CCS, there remains a lack of consensus on
+the most effective methods for accelerating and scaling up CCS projects.
+
+In this study, the integration of Machine Learning (ML) whereby the reports from the Norwegian Petroleum
+Directorate (NPD) are ingested into one platform creates potential cost-effective solution by screening
+previous knowledge gathered for depleting oil and gas fields and significantly reduces the time of the
+screening, the evaluation and the ranking of CCS prospects. We investigate the feasibility of such a study
+on the Norwegian Continental Shelf by analyzing the geology and capacity of existing oil and gas fields.
+The analysis is conducted on historical data from final well reports for 361 wells (NPD, 2023) which are
+priorly ingested using Machine Learning (ML) and Artificial Intelligence (AI) by indexing and tagging
+metadata from the documents, extracting, and classifying images and generating geological interpretable
+output such as heat maps or knowledge graphs. Our research includes a detailed characterization and
+interpretation of the subsurface geology, including the identification of potential storage formations, the
+analysis of reservoir properties such as porosity and permeability and the evaluation of seal characteristics.
+We also conducted a comprehensive assessment of the capacity for CO2 storage, considering factors such
+as injection rate and pressure buildup.
+
+Methodology
+
+Depleting oil and gas fields in the Norwegian Continental Shelf with their massive amount of data being
+collected over decades of development and production are often considered good candidates for CCS
+opportunities. Unfortunately the vast amount of knowledge come with the challenges associated to the lack
+of normalization of the data and the diversity of the different format and template utilized making it difficult
+to utilize the full potential of such data without allocating significant manual work.
+
+In our case study, Machine learning pipelines are used to classify, cluster, and extract insights from such
+an unstructured data. Priorly trained and G&G domain specific natural language processing (NLP)
+transformers are executed on the text to perform indexing, metadata tagging and topic modeling, when
+Deep Convolutional Neural Network (DCNN) extract, classify and segment extracted images. Such an
+approach has the advantage of significantly lessening manual human intervention allowing G&G experts
+to focus on the interpretation of the data itself using a front end deployed interface (Baillard et al., 2019).
+As seen in Figure | the data visualization and interpretation are performed through a suite of six analytical
+tools: (1) summarizes the important attributes of the well automatically extracted from the document, (2)
+aids in portraying the well data on a map and visualizes the lateral distribution of search queries, (3)
+provides an in-depth search within all the corpus for the text and any tagged associated metadata using
+NLP, (4) correlates wells between each other’s to understand and interpret the semantic structure of the
+basin(5) searches the images extracted from DCNN into its respected geological categories, (6) quantifies
+the frequency of different lithologies present from the different wells.
+
+84 EAGE Annual Conference & Exhibition
