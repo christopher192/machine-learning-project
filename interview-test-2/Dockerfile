@@ -3,15 +3,16 @@ FROM ubuntu:20.04
 
 # update package list and install necessary system dependencies
 RUN apt-get update && apt-get install -y \
-    tesseract-ocr \
-    libtesseract-dev \
+    # tesseract-ocr \
+    # libtesseract-dev \
     python3 \
     python3-pip \
-    poppler-utils \
+    # poppler-utils \
+    libpq-dev \
     && apt-get clean
 
 # install python libraries
-RUN pip3 install pytesseract pdf2image pillow streamlit
+RUN pip3 install pytesseract pdf2image pillow streamlit psycopg2 openai python-dotenv
 
 # create a directory in the container
 RUN mkdir -p /app/output
@@ -30,4 +31,5 @@ COPY 2023-Double-Funnel.pdf /app/
 EXPOSE 8501
 
 # run processes sequentially
-CMD ["sh", "-c", "python3 ocr_extraction.py && streamlit run frontend.py"]
+# CMD ["sh", "-c", "python3 ocr_extraction.py && streamlit run frontend.py"]
+CMD ["streamlit", "run", "frontend.py"]
