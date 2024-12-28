@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # install python libraries
-RUN pip3 install pytesseract pdf2image pillow  streamlit
+RUN pip3 install pytesseract pdf2image pillow streamlit
 
 # create a directory in the container
 RUN mkdir -p /app/output
@@ -23,6 +23,8 @@ WORKDIR /app
 # COPY . /app
 COPY ocr_extraction.py /app/
 COPY frontend.py /app/
+COPY .env /app/
+COPY 2023-Double-Funnel.pdf /app/
 
 # expose port for streamlit
 EXPOSE 8501
