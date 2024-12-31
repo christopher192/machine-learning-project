@@ -6,20 +6,24 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-
-# Check if the OpenAI API key is set
 open_ai_api_key = os.getenv('OPENAI_API_KEY')
+aws_endpoint = os.getenv('AWS_ENDPOINT')
+aws_database = os.getenv('AWS_DATABASE')
+aws_port = os.getenv('AWS_PORT')
+aws_username = os.getenv('AWS_USERNAME')
+aws_password = os.getenv('AWS_PASSWORD')
+
 if not open_ai_api_key:
     st.error("OpenAI API key not set in environment variables.")
     exit()
 
 # Database configuration
 db_config = {
-    'dbname': 'document_db',
-    'user': 'postgres',
-    'password': 'admin',
-    'host': 'localhost',
-    'port': '5432'
+    'dbname': aws_database,
+    'user': aws_username,
+    'password': aws_password,
+    'host': aws_endpoint,
+    'port': aws_port
 }
 
 # Initialize OpenAI client

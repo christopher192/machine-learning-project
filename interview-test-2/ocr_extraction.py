@@ -4,10 +4,19 @@ import pytesseract
 from pdf2image import convert_from_path
 from psycopg2 import sql
 from contextlib import closing
+from dotenv import load_dotenv
 
 # Set up paths
 OUTPUT_DIR = 'output'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Load environment variables
+load_dotenv()
+aws_endpoint = os.getenv('AWS_ENDPOINT')
+aws_database = os.getenv('AWS_DATABASE')
+aws_port = os.getenv('AWS_PORT')
+aws_username = os.getenv('AWS_USERNAME')
+aws_password = os.getenv('AWS_PASSWORD')
 
 def process_pdf_and_extract_text(pdf_path):
     """Convert PDF pages to images, perform OCR, and return extracted text."""
@@ -40,11 +49,11 @@ def insert_text_to_db(cursor, page_number, text):
 if __name__ == "__main__":
     # Database configuration
     db_config = {
-        'dbname': 'document_db',
-        'user': 'postgres',
-        'password': 'admin',
-        'host': 'localhost',
-        'port': '5432'
+        'dbname': aws_database,
+        'user': aws_username,
+        'password': aws_password,
+        'host': aws_endpoint,
+        'port': aws_port
     }
 
     pdf_path = '2023-Double-Funnel.pdf'
