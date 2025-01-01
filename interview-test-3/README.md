@@ -50,4 +50,29 @@ Your submission will be assessed on:
 
 ### Step By Step
 1. Understand Dataset
-    - tes
+    - Date and Temporal Variables
+        - `Day`: Day of the week.
+        - `Date`: Exact date of the record.
+    - Location & Operational Variables
+        - `Region`, `Mill Code`: Identifies the location and specific mill.
+        - `Mill Type`: Operational category of the mill.
+    - Quality & Crop Characteristics
+        - `Crop Freshness Score`:  Indicates the freshness of processed fruits, a key determinant of OER.
+        - `Ripe %`, `Long Stalk %`, `Rat Damage %`: Metrics describing fruit quality.
+        - `Loose Fruits %`: Proportion of fruits that fell during transport or harvesting.
+    - Environmental & Maturity Data
+        - `Rainfall (mm)`: External factor that may impact crop quality.
+        - `Age Profile (years)`: Maturity of plantation crops, which can influence oil yield.
+    - Efficiency and Loss Metrics
+        - `Total Oil Losses %`: Represents oil not extracted, affecting OER.
+        - `Downtime %`: Unproductive time during operations.
+    - Production Volume and Seed Composition:
+        - `FFB Processed (MT)`: Fresh Fruit Bunches processed, reflecting production scale.
+        - `Seed A %`, `Seed B %`, `Other Seeds %`: Composition of fruit batches, influencing oil quality.
+    - Geographical Features
+        - `Coastal %`, `Inland %`: Proportions of crops sourced from coastal vs. inland areas.
+    - Target Variable
+        - `Actual OER %`: The oil extraction rate, the primary measure of efficiency and performance.
+2. Data Cleaning
+3. Data Preprocessing
+4. Outlier Handling
