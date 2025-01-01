@@ -15,7 +15,7 @@
 | **Downtime %**             | The higher the downtime %, the lower the OER%.                                               | Acceptable threshold: 6% and below     |
 | **FFB Processed MT**       | Fresh Fruit Bunch - Higher FFB processed, higher utilization rate, higher OER.              | N/A                                    |
 | **Seed Type**              | Seed A + Seed B + Other Seeds = 100%.                                                      | N/A                                    |
-| **Topography**             | Coastal % + Inland % = 100%.    
+| **Topography**             | Coastal % + Inland % = 100%.   | N/A                                    |
 
 ### Assignment Overview
 You will receive a dataset in Excel format. Your task is to:
@@ -31,3 +31,5 @@ You will receive a dataset in Excel format. Your task is to:
 
 ### Highlight Insights
 - Analyze and present meaningful insights from the data, such as which factors most significantly influence OER.
+
+### Step By Step
