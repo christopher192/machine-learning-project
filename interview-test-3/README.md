@@ -32,4 +32,22 @@ You will receive a dataset in Excel format. Your task is to:
 ### Highlight Insights
 - Analyze and present meaningful insights from the data, such as which factors most significantly influence OER.
 
+### Submission Requirements
+#### Deadline
+You will have 72 hours to complete this assignment from the time the dataset is shared with you. Please inform us of your preferred day to receive the dataset. You will be receiving the dataset from (x am – xpm) on your preferred working day.
+
+#### Deliverables
+The model code (in Python, R, or any tool/language of your choice) and outputs.
+Documentation (in Word or PDF format) outlining your thought process.
+A summary of key insights and recommendations.
+
+#### Evaluation Criteria
+Your submission will be assessed on:
+- The effectiveness, accuracy, and appropriateness of your predictive model.
+- Analytical depth in explaining which factors drive OER performance.
+- Business relevance and practicality of your insights and recommendations.
+- Clarity, structure, and thoroughness of your documentation.
+
 ### Step By Step
+1. Understand Dataset
+    - tes
