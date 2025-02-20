@@ -32,9 +32,16 @@ Loading..
     <br>
 
 ### Rule-based Approach
+Loading..
 
 ### AI-based Approach
+To process multiple requests asynchronously in the background. Instead of sending each request individually, upload them in a `JSONL` file and `OpenAI` processes them asynchronously.
 
+#### Workflow
+1. User submits a question → Save it with a unique identifier in `requests.jsonl`.
+2. Every 1 minute → Submit a batch job.
+3. Monitor the batch → Download results when completed.
+4. Send responses to users
 
 ### Relevant Discussion
 1. https://github.com/digitalpalidictionary/dpd-db/discussions/33
