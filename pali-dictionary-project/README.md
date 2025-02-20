@@ -2,7 +2,7 @@
 ### Introduction
 Loading..
 
-### Dataset
+### Dataset Description
 1. `vocab_class_*.csv`
     - <b>id</b> - Unique identifier for each Pali word entry.
     - <b>pali</b> - The Pali word, including declensions and conjugations.
@@ -13,6 +13,16 @@ Loading..
     - <b>example_1</b> - An example sentence from the sutta using the word in context.
     - <b>source_2</b> to <b>source_4</b> - Additional sources where the word appears, following the same structure as <b>source_1</b>.
 2. `exercises_class_*.txt`
+    <br>This dataset contains `Pali sentences` with their corresponding `English translations` and references from various `Buddhist scriptures`. The dataset is useful for `Pali language studies`, `sutta analysis`, and `Dhamma teachings`. 
+    <br><br>Important document data for extraction
+    - <b>Canonical Source</b> - MN, SN, DN, DHP, VIN, AN, UD, SNP, TH..
+    - <b>Sutta Number</b> - 22.33, 3.21, 16.32..
+    - <b>Pali Sentence</b>
+    - <b>English Meaning of The Pali Sentence</b>
+3. `output_class_*.txt`
+    <br>
+4. `suttas.csv`
+    <br>
 
 ### To-do-list
 1. Word Matching
@@ -20,6 +30,11 @@ Loading..
     - Extract meaningful & relavant data as much as possible from `vocab_class_*.csv`.
 2. Relevance Filtering
     <br>
+
+### Rule-based Approach
+
+### AI-based Approach
+
 
 ### Relevant Discussion
 1. https://github.com/digitalpalidictionary/dpd-db/discussions/33
