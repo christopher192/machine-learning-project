@@ -19,7 +19,7 @@
 - Skewness distribution was analyzed, and the top 10 most skewed features were visualized.
 - After cleaning, feature scaling was applied using StandardScaler to normalize feature distributions before model training.
 
-### Analytical Algorithm and Step
+### Analytical Algorithms and Steps
 - Three machine learning algorithms were selected for modeling:
     - Logistic Regression: Used as a simple linear baseline model.
     - Random Forest Classifier: An ensemble method based on bagging decision trees.
