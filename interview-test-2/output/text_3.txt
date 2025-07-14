@@ -1,0 +1,62 @@
+EAGE ANNUAL
+
+VIENNA | AUSTRIA
+
+Figure 3 shows the generated knowledge graph associated to the zone of interest. Knowledge graph is a
+structured way to represent and organize knowledge in a way that is easily queried and traversed across all
+the corpus of documents ingested. This makes it useful for a holistic interpretation of the wells present in
+the area of interest, interpreting and ranking them based on their location and importance in the graph
+respectively as “alpha” or geological analogue, “scouts”, “pack or “lone-spirit” wells. As observed, the
+structure of the knowledge graph does indicate a non-homogeneous distribution with 7 different clusters
+being identified. Each cluster is centered around key wells acting as key geological analogues (“alpha”
+well) for the surrounded wells located within the cluster. “Scouts” wells define the unique critical paths
+between adjacent clusters, allowing geologists to deeper understand the geology and exploration history of
+the area of interest (Hernandez et al., 2019).
+
+5,1 °
+
+G500M t-2 an ge >
+
+A, at 9-9
+
+SOMm-7 7 ASUS we ES es
+
+: °
+= ea %
+“C5 oe 3 \ eae ae ee
+cane ae : 7 iene
+SSG R72 -
+* " — -,
+6506H 2-6 y <n a aie ~ = gt
+ca a 7 ad
+6507/7-2 Geuate . pe a Fac: a \
+* esanAGTIO Adin eae Dm. ” a = 2/7-20 me
+tang: = - ssi
++ rece 4 +m “ew a MY oh ee
+Nahre ee ae
+manda = s ae ma iad
+1 t. zn sal
+. i wd oe _ oaghg? 7m
+
+Figure 3 Knowledge graph with clusters of wells from the Norwegian dataset
+
+Based on the recognized clusters, wells are further investigated by cross-correlating their respective post
+drill conclusion, formation penetration and keywords search associated to reservoir properties, seal
+characteristics or a specific search allowing a deeper dive in the corpus. An example of such full corpus
+search for ‘porosity’ detected from the well final well reports, within text, images and tables identifying the
+relevant values of the porosity and their associated formations. Auto-classified images can enhance the
+analysis by providing detailed information about the textures, layers, and structural characteristics of the
+rocks through different scales, from field scale with seismic stacks or isochrone map, to microscopic scale
+with thin section images. Additionally, image analysis techniques such as pattern recognition can be used
+to automatically extract features and classify rock formations.
+
+In this example, the “data sweep” suggests suitable areas for CCS in the Norwegian Sea corresponding to
+Heidrun and Marulk fields. The study highlights the potential of Ile and Garn formation within the Fangst
+Group under the Heidrun Field. These intervals show good average depths for CO2 storage for supercritical
+storage, and are characterized by good porosity and permeability, with a significant net sand thickness. Seal
+integrity has been confirmed and validated. The interval above Ile and Garn are currently producing, and
+therefore has seismic and velocity data which allows precise CO2 injection monitoring through
+microseismic. The upper Ile and Garn aquifers have good reservoirs in the southern part of the Froan Basin
+which may indicate additional potential CCS storage in this area.
+
+84'* EAGE Annual Conference & Exhibition
