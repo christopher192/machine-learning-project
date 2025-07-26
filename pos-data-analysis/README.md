@@ -35,7 +35,8 @@ To launch the interactive POS Sales Dashboard, run the following command in term
 streamlit run pos-report-analysis.py
 ```
 
-Product Contribution Analysis (Wagyu Sales %)
+Product Contribution Analysis (Wagyu Sales %)<br>
+Wagyu items contribute approximately 19.64% of total sales.
 ```
 # Wagyu-related item sales / Total sales × 100
 wagyu_mask = df["Product"].str.contains("wagyu", case=False, na=False)
@@ -57,12 +58,12 @@ Product Development Recommendation
     - highest quantity sold (410 units), showing strong matcha demand
 
 Menu Strategy Framework
-| **Category**                           | **Proposed Strategy**                                               | **Example**                         |
-| -------------------------------------- | ------------------------------------------------------------------- | ----------------------------------- |
-| **i. Low Sales, High Profit Margin**   | Aggressively promoting, feature as dinner item, use in premium combos  | Sukiyaki Hotpot (RM69)            |
-| **ii. High Sales, High Profit Margin** | Maintain and protect, highlight as flagship offerings               | Signature Wagyu Don, Premium Set    |
-| **iii. High Sales, Low Profit Margin** | Consider bundling or slight price increase, reduce cost per serving | Matcha Latte Z3 (RM9.89)          |
-| **iv. Low Sales, Low Profit Margin**   | Phase out or replace with trending/new items                        | Swiss Roll - Hokkaido Milk, Gelato - Lavender, Full Cream Milk |
+| Category                    | Strategy                                               | Example                                        |
+| --------------------------- | ------------------------------------------------------ | ---------------------------------------------- |
+| **Low Sales, High Profit**  | Promote in meal bundles or premium sets                | Sukiyaki Hotpot                                |
+| **High Sales, High Profit** | Retain, highlight as core offerings                    | Signature Wagyu Don, Premium Set Meal          |
+| **High Sales, Low Profit**  | Explore bundling, minor price increase | Matcha Latte Z3                                |
+| **Low Sales, Low Profit**   | Phase out or replace with trending items               | Swiss Roll, Gelato - Lavender, Full Cream Milk |
 
 ### POS Report Analysis - Part 2
 1. What key metrics you chose? 
