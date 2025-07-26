@@ -66,7 +66,7 @@ Menu Strategy Framework
 | **Low Sales, Low Profit**   | Phase out or replace with trending items               | Swiss Roll, Gelato - Lavender, Full Cream Milk |
 
 ### POS Report Analysis - Part 2
-What key metrics were chosen?
+What key metrics are chosen?
 1. Total Sales (RM): Sum of all item-level sales excluding tax (Amount (Excl Tax))
 2. Total Orders: Count of unique invoice numbers
 3. Total Quantity Sold: Sum of item quantities sold
