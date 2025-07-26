@@ -48,7 +48,21 @@ It is best to track item performance based on `Sales Amount` rather than `Quanti
 - Sales amount reflects actual revenue and financial impact
 - Quantity can be misleading if high-volume items are low-priced
 
+Product Development Recommendation
+1. Sudoku Platter
+    - RM10,294.2 in sales from 258 orders. This indicates high customer interest
+2. Wagyu Karaage Don or Wagyu Sliders
+    - Wagyu-based items (Don, Ramen, Set Meal) contribute ~39% of sales among top items
+3. Matcha Dessert Series
+    - highest quantity sold (410 units), showing strong matcha demand
 
+Menu Strategy Framework
+| **Category**                           | **Proposed Strategy**                                               | **Example**                         |
+| -------------------------------------- | ------------------------------------------------------------------- | ----------------------------------- |
+| **i. Low Sales, High Profit Margin**   | Aggressively promoting, feature as dinner item, use in premium combos  | Sukiyaki Hotpot (RM69)            |
+| **ii. High Sales, High Profit Margin** | Maintain and protect, highlight as flagship offerings               | Signature Wagyu Don, Premium Set    |
+| **iii. High Sales, Low Profit Margin** | Consider bundling or slight price increase, reduce cost per serving | Matcha Latte Z3 (RM9.89)          |
+| **iv. Low Sales, Low Profit Margin**   | Phase out or replace with trending/new items                        | Swiss Roll - Hokkaido Milk, Gelato - Lavender, Full Cream Milk |
 
 ### POS Report Analysis - Part 2
 1. What key metrics you chose? 
