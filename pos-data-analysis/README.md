@@ -30,7 +30,7 @@ How layout supports clarity and insight?
 ![alt text](images/product_sales_report-4.png)
 ![alt text](images/product_sales_report-5.png)
 
-To launch the interactive POS Sales Dashboard, run the following command in terminal
+To launch the the Dashboard, run the following command in terminal
 ```
 streamlit run pos-report-analysis.py
 ```
@@ -66,4 +66,37 @@ Menu Strategy Framework
 | **Low Sales, Low Profit**   | Phase out or replace with trending items               | Swiss Roll, Gelato - Lavender, Full Cream Milk |
 
 ### POS Report Analysis - Part 2
-1. What key metrics you chose? 
+What key metrics were chosen?
+1. Total Sales (RM): Sum of all item-level sales excluding tax (Amount (Excl Tax))
+2. Total Orders: Count of unique invoice numbers
+3. Total Quantity Sold: Sum of item quantities sold
+4. Average Basket Size (RM): Total sales divided by total orders
+5. Sales Over Time: Daily sales trend based on Creation Date
+6. Top Products by Sales: Highest-grossing items by total revenue
+7. Sales by Category: Aggregated sales across different product categories
+8. Payment Method Breakdown: Cash vs eWallet vs Credit Card usage
+9. Order Type Distribution: Take Away vs Dine In performance
+
+Why These Metrics Matter to Business Decisions
+1. Revenue Tracking: Total sales, basket size, and quantity help assess financial performance
+2. Product Strategy: Identifying top-selling items for marketing, bundling, and RnD.
+3. Customer Behavior: Payment types and order methods highlight consumer preferences and tech adoption.
+4. Trend Spotting: Daily sales trends help detect seasonality or promotions impact
+
+How layout supports clarity and insight?
+1. Total Sales, Orders, and Average Basket Size are displayed at the top for quick performance assessment. Raw data toggle allows further exploration.
+![alt text](images/sales_by_order_dashboard-1.png)
+![alt text](images/sales_by_order_dashboard-2.png)
+2. A daily trend line shows revenue fluctuations and seasonality, spot sales spikes, dips, or patterns.
+![alt text](images/sales_by_order_dashboard-3.png)
+3. Aggregates sales at the category level to identify which product lines drive revenue.
+![alt text](images/sales_by_order_dashboard-4.png)
+4. Shows customer payment preferences (e.g., eWallet, cash), supporting decisions on payment options and POS optimization.
+![alt text](images/sales_by_order_dashboard-5.png)
+5. Distinguishes between Dine In and Take Away, helping with operational planning, staffing, and outlet strategy.
+![alt text](images/sales_by_order_dashboard-6.png)
+
+To launch the the Dashboard, run the following command in terminal
+```
+streamlit run sales_by_order_dashboard.py
+```
