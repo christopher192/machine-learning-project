@@ -100,17 +100,14 @@ Unused Column
 - Data transformation (Encoding categorical column)
    1. Given the high number of features, one hot encoding is impractical
    2. Label encoding is used for converting categorical data into a numerical format
-- Data transformation (Encoding categorical column)
-- Data extraction
 
-#### 6. Feature Selection
+#### 6. Feature Importance
 
-#### 5. Hyperparameter Tuning
-#### 6. Model training
+#### 7. Model training
 - Isolated forest
 - One class SVM
-#### 7. Model prediction
-#### 8. Anomaly detection
-#### 9. Model explainability
+#### 8. Model prediction
+#### 9. Anomaly detection
+#### 10. Model explainability
 
 #### Result
