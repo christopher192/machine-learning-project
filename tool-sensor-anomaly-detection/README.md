@@ -98,16 +98,16 @@ Unused Column
    - `timestamp`, `run`, `run_start_time`, `run_start_time_second`
    - All of them hold no useful for anomaly detection
 - Data transformation (Encoding categorical column)
-   1. Given the high number of features, one hot encoding is impractical
-   2. Label encoding is used for converting categorical data into a numerical format
+   - Given the high number of features, one hot encoding is impractical
+   - Label encoding is used for converting categorical data into a numerical format
+- Data transformation (Normalize numberical column)
+   - Use `StandardScaler` to normalize values to mean = 0 and standard deviation = 1
+   - `StandardScaler` over `MinMaxScaler`: Keep anomalies more visible, less squashing from outliers
+   - Target column: `data_quality`, `tool_sensor_*` related
+   - `wafer_id`, `calc_step_seq`, `calc_loop_seq` are excluded from normalization
 
-#### 6. Feature Importance
-
-#### 7. Model training
+#### 6. Model training
 - Isolated forest
 - One class SVM
-#### 8. Model prediction
-#### 9. Anomaly detection
-#### 10. Model explainability
 
 #### Result
