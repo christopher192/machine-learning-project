@@ -76,30 +76,35 @@ Unused Column
    - Partial Missing Value
       - `tool_sensor_1` – `tool_sensor_46` have 456 missing value
       - `tool_sensor_42` has 228 missing value
-      - `calc_step_seq` & `calc_loop_seq` also have 228 missing values
+      - `calc_step_seq` & `calc_loop_seq` also have 228 missing value
       - Action taken: Remove row with remaining null to get a clean dataset of 14,388 row because have sufficient dataset
 - Constant feature handling
    - Column containing only a single value will be eliminated as it do not provide useful information for analysis
    - Target column: `tool_name`, `tool_id`, `eqp_type`, `has_comments`, `logical_recipe_id`, `lot_purpose_type`, `lot_type`, `tool_sensor_2`, `tool_sensor_3`, `tool_sensor_4`, `tool_sensor_22`, `tool_sensor_27`, `tool_sensor_28`, `tool_sensor_29`, `tool_sensor_30`, `tool_sensor_31`, `tool_sensor_32`, `tool_sensor_33`, `tool_sensor_41`, `tool_sensor_46`
 
 #### 4. Exploratory Data Analysis
-2.1. Time Series Analytics (Tool Sensor)
+4.1 Time Series Analytics (Tool Sensor)
 ![alt text](image/image-1.png)
 
-2.2. Categorical Variable Analysis
+4.2 Categorical Variable Analysis
 ![alt text](image/image-2.png)
 
-2.3. Relation Between Run, Run Start Time (Second) and Data Quality
+4.3 Relation Between Run, Run Start Time (Second) and Data Quality
 <br>There exists a positive correlation among `run`, `run_start_time`, and `data_quality`. As the `run` number increases, both `run_start_time` and `data_quality` show an upward trend. For analytical purposes, `run_start_time` is converted into seconds and represented in a new column `run_start_time_second`.
 ![alt text](image/image-3.png)
 
-#### 3. Feature Engineering
- - Data transformation
-    1. Given the high number of features, one hot encoding is impractical.
-    2. Label encoding is used for converting categorical data into a numerical format.
- - Data extraction
+#### 5. Feature Engineering
+- Drop irrelevant feature
+   - `timestamp`, `run`, `run_start_time`, `run_start_time_second`
+   - All of them hold no useful for anomaly detection
+- Data transformation (Encoding categorical column)
+   1. Given the high number of features, one hot encoding is impractical
+   2. Label encoding is used for converting categorical data into a numerical format
+- Data transformation (Encoding categorical column)
+- Data extraction
 
-#### 4. Feature Selection
+#### 6. Feature Selection
+
 #### 5. Hyperparameter Tuning
 #### 6. Model training
 - Isolated forest
