@@ -139,9 +139,9 @@ Both models output binary anomaly flags (`1` = anomaly, `0` = normal) for train 
    - Sorted to identify top 20 most anomalous runs.
 - Visualizations: Histograms of anomaly scores with decision thresholds marked.
 ![alt text](image/image-4.png)
-Most samples have positive scores (normal), with a small left-tail below the 0 threshold indicating anomalies.
+<br>Most samples have positive scores (normal), with a small left-tail below the 0 threshold indicating anomalies.
 ![alt text](image/image-5.png)
-Most scores are near −0.45 (normal), with a few low-score points left of the threshold indicating anomalies.
+<br>Most scores are near −0.45 (normal), with a few low-score points left of the threshold indicating anomalies.
 - Consensus Anomalies: Flagged runs where both models agree (`1 = anomaly`).
    - 63 runs flagged by both OCSVM and Isolation Forest.
 - Inspection: Displayed top anomalous runs for further analysis.
