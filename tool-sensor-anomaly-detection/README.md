@@ -106,8 +106,45 @@ Unused Column
    - Target column: `data_quality`, `tool_sensor_*` related
    - `wafer_id`, `calc_step_seq`, `calc_loop_seq` are excluded from normalization
 
-#### 6. Model training
-- Isolated forest
-- One class SVM
+#### 6. Feature Selection
+Pairwise correlation matrix (Pearson/Spearman) was computed to identify redundant variables for feature selection in anomaly detection. The highest correlations were
+- Perfect correlation (r = ±1.000): `machine_recipe_id`–`physical_recipe_id`, `calc_step_seq`–`calc_loop_seq`.
+- Near-perfect correlation (r ≥ 0.99): `tool_sensor_34`–`tool_sensor_44`, `tool_sensor_15`–`tool_sensor_16`, `tool_sensor_26`–`tool_sensor_44`, `tool_sensor_26`–`tool_sensor_34`.
+- Strong correlations (0.95 ≤ r < 0.99): `recipe_id`–`tool_sensor_14`, `lot_id`–`tool_sensor_34`, `product_grp_id`–`product_id`.
 
-#### Result
+![alt text](image/cf.png)
+
+For anomaly detection, highly correlated variables can be redundant, the features will be dropped.
+
+#### 7. Hyperparameter Tuning (Isolation Forest & One-Class SVM)
+Performed hyperparameter tuning using ParameterGrid for Isolation Forest and One-Class SVM.
+- Isolation Forest best params: `{'bootstrap': True, 'contamination': 0.01, 'max_features': 1.0, 'max_samples': 0.5, 'n_estimators': 200}`.
+- OneClassSVM best params: `{'gamma': np.float64(0.001), 'nu': 0.01}`.
+
+#### 8. Model Training & Model Prediction
+Trained two anomaly detection models on an 80/20 train-test split:
+
+- Isolation Forest (`bootstrap=True`, `contamination=0.01`, `max_features=1.0`, `max_samples=0.5`, `n_estimators=200`).
+- One-Class SVM (`kernel='rbf'`, `nu=0.02`, `gamma=0.1`).
+
+Both models output binary anomaly flags (`1` = anomaly, `0` = normal) for train and test sets.
+
+#### 9. Anomaly Detection
+- Anomaly Rates: Calculated percentage of anomalies flagged by each model on the test set.
+   - OCSVM anomaly rate: 26.86%
+   - IF anomaly rate : 0.94%
+- Anomaly Scores:
+   - OCSVM → decision_function scores
+   - Isolation Forest → score_samples values
+   - Sorted to identify top 20 most anomalous runs.
+- Visualizations: Histograms of anomaly scores with decision thresholds marked.
+![alt text](image/image-4.png)
+Most samples have positive scores (normal), with a small left-tail below the 0 threshold indicating anomalies.
+![alt text](image/image-5.png)
+Most scores are near −0.45 (normal), with a few low-score points left of the threshold indicating anomalies.
+- Consensus Anomalies: Flagged runs where both models agree (`1 = anomaly`).
+   - 63 runs flagged by both OCSVM and Isolation Forest.
+- Inspection: Displayed top anomalous runs for further analysis.
+   - OCSVM and Isolation Forest flagged runs with extreme deviations in multiple sensors — large drops in `tool_sensor_14`/`tool_sensor_17` and spikes in others like `tool_sensor_15` and `tool_sensor_45`. Several runs overlap, aligning with the 63 consensus anomalies.
+
+#### 10. Model Explainability
