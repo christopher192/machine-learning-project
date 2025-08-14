@@ -158,3 +158,4 @@ For Isolation Forest `Global feature importance`, the SHAP plot shows that `tool
 ![alt text](image/image-7.png)
 For Isolation Forest `Local explanation`, most top features pushed this sample toward anomalous, with `tool_sensor_5` having the largest negative impact, while `tool_sensor_11` slightly offset this toward normal.
 
+Skip One-Class SVM as it is estimated to take around 8.65 hours to complete.
