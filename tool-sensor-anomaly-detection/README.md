@@ -83,14 +83,16 @@ Unused Column
    - Target column: `tool_name`, `tool_id`, `eqp_type`, `has_comments`, `logical_recipe_id`, `lot_purpose_type`, `lot_type`, `tool_sensor_2`, `tool_sensor_3`, `tool_sensor_4`, `tool_sensor_22`, `tool_sensor_27`, `tool_sensor_28`, `tool_sensor_29`, `tool_sensor_30`, `tool_sensor_31`, `tool_sensor_32`, `tool_sensor_33`, `tool_sensor_41`, `tool_sensor_46`
 
 #### 4. Exploratory Data Analysis
-4.1 Time Series Analytics (Tool Sensor)
+4.1 Time Series Analytics (Tool Sensor)<br>
+To visualize sensor datas, showing fluctuations, trends, and unusual deviations in readings. Anomalies appear as abrupt spikes, drops, or persistent shifts from normal operating ranges. This view allows quick identification of which sensors exhibit abnormal patterns, the timing of these events, etc. 
 ![alt text](image/image-1.png)
 
-4.2 Categorical Variable Analysis
+4.2 Categorical Variable Analysis<br>
+The frequency distribution plots show how values are distributed for each categorical feature. These charts highlight dominant categories, rare occurrences, and potential imbalances in the dataset. Can help identify whether categorical features are well-represented or skewed. Also to have insight on influence anomaly detection performance and model bias.
 ![alt text](image/image-2.png)
 
-4.3 Relation Between Run, Run Start Time (Second) and Data Quality
-<br>There exists a positive correlation among `run`, `run_start_time`, and `data_quality`. As the `run` number increases, both `run_start_time` and `data_quality` show an upward trend. For analytical purposes, `run_start_time` is converted into seconds and represented in a new column `run_start_time_second`.
+4.3 Relation Between Run, Run Start Time (Second) and Data Quality<br>
+Time-series plots of these highlight trends, timing shifts, and quality drops that may indicate process anomalies. There exists a positive correlation among `run`, `run_start_time`, and `data_quality`. As the `run` number increases, both `run_start_time` and `data_quality` show an upward trend. For analytical purposes, `run_start_time` is converted into seconds and represented in a new column `run_start_time_second`.
 ![alt text](image/image-3.png)
 
 #### 5. Feature Engineering
@@ -139,12 +141,20 @@ Both models output binary anomaly flags (`1` = anomaly, `0` = normal) for train 
    - Sorted to identify top 20 most anomalous runs.
 - Visualizations: Histograms of anomaly scores with decision thresholds marked.
 ![alt text](image/image-4.png)
-<br>Most samples have positive scores (normal), with a small left-tail below the 0 threshold indicating anomalies.
+<br>Majority of scores are positive (normal), with a small negative tail marking anomalies.
 ![alt text](image/image-5.png)
-<br>Most scores are near −0.45 (normal), with a few low-score points left of the threshold indicating anomalies.
+<br>Majority of scores are above the threshold (normal), with a left-tail of low scores indicating anomalies.
 - Consensus Anomalies: Flagged runs where both models agree (`1 = anomaly`).
-   - 63 runs flagged by both OCSVM and Isolation Forest.
+   - 24 runs flagged by both OCSVM and Isolation Forest.
 - Inspection: Displayed top anomalous runs for further analysis.
-   - OCSVM and Isolation Forest flagged runs with extreme deviations in multiple sensors — large drops in `tool_sensor_14`/`tool_sensor_17` and spikes in others like `tool_sensor_15` and `tool_sensor_45`. Several runs overlap, aligning with the 63 consensus anomalies.
+   - Both models flag extremes in `tool_sensor_12`, `tool_sensor_15`, `tool_sensor_21`, `tool_sensor_23`, and `tool_sensor_38`. OCSVM focuses on sharp spikes, while Isolation Forest also captures deep negative dips and broader distribution shifts.
 
 #### 10. Model Explainability
+SHAP will be used identify which features most influence anomaly scores globally and explains, for each sample, how specific sensor values push it toward normal or anomalous.
+
+![alt text](image/image-6.png)
+For Isolation Forest `Global feature importance`, the SHAP plot shows that `tool_sensor_43`, `tool_sensor_1`, and `machine_recipe_id` have the highest impact on anomaly detection, with color indicating whether high or low values push predictions toward normal or anomalous.
+
+![alt text](image/image-7.png)
+For Isolation Forest `Local explanation`, most top features pushed this sample toward anomalous, with `tool_sensor_5` having the largest negative impact, while `tool_sensor_11` slightly offset this toward normal.
+
