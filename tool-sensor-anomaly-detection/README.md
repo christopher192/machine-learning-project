@@ -153,9 +153,11 @@ Both models output binary anomaly flags (`1` = anomaly, `0` = normal) for train 
 SHAP will be used identify which features most influence anomaly scores globally and explains, for each sample, how specific sensor values push it toward normal or anomalous.
 
 ![alt text](image/image-6.png)<br>
-For Isolation Forest `Global feature importance`, the SHAP plot shows that `tool_sensor_43`, `tool_sensor_1`, and `machine_recipe_id` have the highest impact on anomaly detection, with color indicating whether high or low values push predictions toward normal or anomalous.
+For Isolation Forest `Global feature importance`, the SHAP plot shows that `tool_sensor_43`, `tool_sensor_1`, `machine_recipe_id`, `tool_sensor_7` and `tool_sensor_39` have the highest impact on anomaly detection or most influential feature, with color indicating whether high or low values push predictions toward normal or anomalous.
 
 ![alt text](image/image-7.png)<br>
-For Isolation Forest `Local explanation`, most top features pushed this sample toward anomalous, with `tool_sensor_5` having the largest negative impact, while `tool_sensor_11` slightly offset this toward normal.
+This Explains why this single sample received its anomaly score.
+
+For Isolation Forest `Local explanation`, most top features pushed this sample toward anomalous, with `tool_sensor_5` = 8.053 having the largest negative impact (–1.2), while `tool_sensor_11` = 2.014 pushed slightly more anomalous (–0.28). Other Key anomaly driver is `tool_sensor_45`, `tool_sensor_39,` `tool_sensor_21` which also known as largest negative value. The more negative the value, the stronger the feature contribution to anomaly. A small offset came from other feature (+1.14), but overall negative dominate. 
 
 Skip One-Class SVM as it is estimated to take around 8.65 hours to complete.
