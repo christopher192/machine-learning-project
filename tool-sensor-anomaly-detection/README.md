@@ -152,10 +152,10 @@ Both models output binary anomaly flags (`1` = anomaly, `0` = normal) for train 
 #### 10. Model Explainability
 SHAP will be used identify which features most influence anomaly scores globally and explains, for each sample, how specific sensor values push it toward normal or anomalous.
 
-![alt text](image/image-6.png)
+![alt text](image/image-6.png)<br>
 For Isolation Forest `Global feature importance`, the SHAP plot shows that `tool_sensor_43`, `tool_sensor_1`, and `machine_recipe_id` have the highest impact on anomaly detection, with color indicating whether high or low values push predictions toward normal or anomalous.
 
-![alt text](image/image-7.png)
+![alt text](image/image-7.png)<br>
 For Isolation Forest `Local explanation`, most top features pushed this sample toward anomalous, with `tool_sensor_5` having the largest negative impact, while `tool_sensor_11` slightly offset this toward normal.
 
 Skip One-Class SVM as it is estimated to take around 8.65 hours to complete.
