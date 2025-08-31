@@ -34,7 +34,7 @@ Anchorage can take many shapes and sizes, such as `half-moon`, `full-moon`, or e
 `HEADING`: The direction the bow of the ship is pointing, excluding external force (wind, tide, current, etc).<br>
 `COURSE`: The direction the ship is actually moving across Earth’s surface, including external forces, also identified as `real track`.
 
-Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (left side)`, and `Starboard (right side)`. The value `TO_BOW,` `TO_STERN`, `TO_PORT`, `TO_STARBOARD` are just offset measurement, how far that single antenna is from each side of the ship. With those 4 number, can calculate the ship’s total length and width.
+Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (left side)`, and `Starboard (right side)`. The value `TO_BOW,` `TO_STERN`, `TO_PORT`, `TO_STARBOARD` are just offset measurement, how far that single antenna is from each side of the ship. With those 4 number, can calculate the ship’s total length and width.<br>
 ![alt text](image/image-2.png)
 
 ### Step-by-Step
