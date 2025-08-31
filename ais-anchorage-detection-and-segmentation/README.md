@@ -18,6 +18,24 @@ Anchorage can take many shapes and sizes, such as `half-moon`, `full-moon`, or e
 2. `H3` - Convert AIS lat/lon into a hexagonal grid system so vessel movement pattern can be analyzed and visualized more effectively.
 
 ### Dataset Understanding
+1. `TIMESTAMP` - Exact time when the AIS message was received.
+2. `MMSI` (Maritime Mobile Service Identity) - Unique nine-digit ID assigned to every vessel’s AIS transponder.
+3. `LATITUDE`/`LONGITUDE` - Vessel’s position at the given timestamp.
+4. `SPEED` (Speed Over Ground) - Vessel’s actual speed relative to Earth, in knot.
+5. `HEADING` - The vessel’s compass direction, range from 0° – to 359°
+6. `COURSE` (Course Over Ground) - The actual direction the ship is moving over the surface, range from 0° – 359°.
+7. `SHIP_AND_CARGO_TYPE` - Vessel type (`70` → Cargo ship, `80` → Tanker, `90` → Other type, `0` → Not available / not classified, etc).
+8. `TO_BOW` - Distance in meter from the AIS antenna to the bow (front) of the ship.
+9. `TO_STERN` - Distance from the AIS antenna to the stern (back) of the ship.
+10. `TO_PORT` - Distance from the AIS antenna to the port side (left side).
+11. `TO_STARBOARD` - Distance from the AIS antenna to the starboard side (right side).
+
+`HEADING` vs `COURSE`<br>
+`HEADING`: The direction the bow of the ship is pointing, excluding external force (wind, tide, current, etc).<br>
+`COURSE`: The direction the ship is actually moving across Earth’s surface, including external forces, also identified as `real track`.
+
+Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (left side)`, and `Starboard (right side)`. The value `TO_BOW,` `TO_STERN`, `TO_PORT`, `TO_STARBOARD` are just offset measurement, how far that single antenna is from each side of the ship. With those 4 number, can calculate the ship’s total length and width.
+![alt text](image/image-2.png)
 
 ### Step-by-Step
 1. Data Conversion
