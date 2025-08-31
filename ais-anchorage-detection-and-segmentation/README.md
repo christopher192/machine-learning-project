@@ -17,7 +17,12 @@ Anchorage can take many shapes and sizes, such as `half-moon`, `full-moon`, or e
 1. `Duckdb` - Handle and query AIS data, AIS consist of million of record, and require fast processing.
 2. `H3` - Convert AIS lat/lon into a hexagonal grid system so vessel movement pattern can be analyzed and visualized more effectively.
 
-### Dataset Insight
+### Dataset Understanding
+
+### Step-by-Step
+1. Data Conversion
+    - For faster querying, the raw `CSV` will be converted into `Parquet` format. Refer to `convert_csv_to_parquet.ipynb`.
+2. Addddding....
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
