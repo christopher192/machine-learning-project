@@ -39,7 +39,7 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
 
 ### Step-by-Step
 1. Data Conversion
-    - For faster querying, the raw `CSV` will be converted into `Parquet` format. Refer to `convert_csv_to_parquet.ipynb`.
+    - For faster querying, the raw `csv` will be converted into `parquet` format. Refer to `convert_csv_to_parquet.ipynb`.
 2. Addddding....
 
 ### Reference
