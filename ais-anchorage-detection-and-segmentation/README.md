@@ -12,3 +12,12 @@ There are two type of anchorage, `Traditional SPOT Anchorage` and `Single Buoy M
 
 Anchorage can take many shapes and sizes, such as `half-moon`, `full-moon`, or even `quarter-moon` pattern. The shape  depending on the anchorage duration and the tidal current pattern at an area. The lesser the anchorage duration, the lesser the likelihood of forming a full moon shape. However, in some area with calm sea, vessel may not form full-moon even when anchor for a long time, because there is little wind or current to move them around.
 ![alt text](image/image-1.png)
+
+### Technology Used
+1. `Duckdb` - Handle and query AIS data, AIS consist of million of record, and require fast processing.
+2. `H3` - Convert AIS lat/lon into a hexagonal grid system so vessel movement pattern can be analyzed and visualized more effectively.
+
+### Dataset Insight
+
+### Reference
+1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
