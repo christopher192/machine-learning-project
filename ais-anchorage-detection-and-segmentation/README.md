@@ -40,7 +40,20 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
 ### Step-by-Step
 1. Data Conversion
     - For faster querying, the raw `csv` will be converted into `parquet` format. Refer to `convert_csv_to_parquet.ipynb`.
-2. Addddding....
+    - Data is saved into `feb_ais`, `aug_ais`, and `static_mmsi` table inside `ais.duckdb`.
+    - Combined table `ais` (Feb + Aug) is created.
+2. Data Analytics
+
+![alt text](image/image-3.png)
+
+Based on above image<br>
+- Both `February` and `August` show massive spike around `0–1 knot`.
+- Outlier found at `102 knot` on the far right, probably caused by an AIS transmission error rather or common error.
+
+Majority of AIS ship speed fall below `30 knot`.
+1. `0–1 knot` → anchored or drifting.
+2. `1–5 knot` → maneuvering near port.
+3. `10–20 knot` → normal cruising speed.
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
