@@ -43,22 +43,21 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
     - Data is saved into `feb_ais`, `aug_ais`, and `static_mmsi` table inside `ais.duckdb`.
     - Combined table `ais` (Feb + Aug) is created.
 2. Data Analytics
-
-1. February
-    - `TIMESTAMP` count = `~106M`, but `LATITUDE/LONGITUDE` only `~90M` → `~16M` rows are missing. 
-    - `SPEED`, `HEADING`, `COURSE` count = `90,430,360`, `~15.8` million rows are missing.
-2. August
-    - `TIMESTAMP` count = `~159M`, but `LATITUDE/LONGITUDE` only `~125M` → `~33M` rows are missing.
-    - `SPEED`, `HEADING`, `COURSE` count = `125,210,300`, `~33.6` million rows are missing.
-3. `MMSI` min = 0 → invalid
-    - `MMSI` alway has `9-digit` positive integer.
-4. `TO_BOW`, `TO_STERN`, `TO_PORT`, `TO_STARBOARD` min = 0 → likely missing dimension value
-    - Probably mean the vessel has not reported its size or the AIS unit wasn’t configured properly.
-    - Possible for very small boat (tug, fishing vessel, ) to have tiny value.
-5. `SPEED`, `HEADING`, `COURSE` → 0
-    - `SPEED`: Likely valid (anchored/stopped), not missing.
-    - `HEADING`: Bow pointing to north, can be real or no heading sensor.
-    - `COURSE`: Moving exactly to north, valid, rare, uncommon.
+    - February
+        - `TIMESTAMP` count = `~106M`, but `LATITUDE/LONGITUDE` only `~90M` → `~16M` rows are missing. 
+        - `SPEED`, `HEADING`, `COURSE` count = `90,430,360`, `~15.8` million rows are missing.
+    - August
+        - `TIMESTAMP` count = `~159M`, but `LATITUDE/LONGITUDE` only `~125M` → `~33M` rows are missing.
+        - `SPEED`, `HEADING`, `COURSE` count = `125,210,300`, `~33.6` million rows are missing.
+    - `MMSI` min = 0 → invalid
+        - `MMSI` alway has `9-digit` positive integer.
+    - `TO_BOW`, `TO_STERN`, `TO_PORT`, `TO_STARBOARD` min = 0 → likely missing dimension value
+        - Probably mean the vessel has not reported its size or the AIS unit wasn’t configured properly.
+        - Possible for very small boat (tug, fishing vessel, ) to have tiny value.
+    - `SPEED`, `HEADING`, `COURSE` → 0
+        - `SPEED`: Likely valid (anchored/stopped), not missing.
+        - `HEADING`: Bow pointing to north, can be real or no heading sensor.
+        - `COURSE`: Moving exactly to north, valid, rare, uncommon.
 
 ![alt text](image/image-3.png)
 
