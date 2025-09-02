@@ -44,9 +44,24 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
     - Combined table `ais` (Feb + Aug) is created.
 2. Data Analytics
 
+1. February
+    - `TIMESTAMP` count = `~106M`, but `LATITUDE/LONGITUDE` only `~90M` → `~16M` rows are missing. 
+    - `SPEED`, `HEADING`, `COURSE` count = `90,430,360`, `~15.8` million rows are missing.
+2. August
+    - `TIMESTAMP` count = `~159M`, but `LATITUDE/LONGITUDE` only `~125M` → `~33M` rows are missing.
+    - `SPEED`, `HEADING`, `COURSE` count = `125,210,300`, `~33.6` million rows are missing.
+3. `MMSI` min = 0 → invalid
+    - `MMSI` alway has `9-digit` positive integer.
+4. `TO_BOW`, `TO_STERN`, `TO_PORT`, `TO_STARBOARD` min = 0 → likely missing dimension value
+    - Probably mean the vessel has not reported its size or the AIS unit wasn’t configured properly.
+    - Possible for very small boat (tug, fishing vessel, ) to have tiny value.
+5. `SPEED`, `HEADING`, `COURSE` → 0
+    - `SPEED`: Likely valid (anchored/stopped), not missing.
+    - `HEADING`: Bow pointing to north, can be real or no heading sensor.
+    - `COURSE`: Moving exactly to north, valid, rare, uncommon.
+
 ![alt text](image/image-3.png)
 
-Based on above image<br>
 - Both `February` and `August` show massive spike around `0–1 knot`.
 - Outlier found at `102 knot` on the far right, probably caused by an AIS transmission error rather or common error.
 
@@ -54,6 +69,18 @@ Majority of AIS ship speed fall below `30 knot`.
 1. `0–1 knot` → anchored or drifting.
 2. `1–5 knot` → maneuvering near port.
 3. `10–20 knot` → normal cruising speed.
+
+![alt text](image/image-4.png)
+
+- Big spike at `511°`, identified as outlier, which mean also `no heading information available`.
+- Ship can only point `0–359°`.
+- `February` and `August` both show similar pattern, but `August` has larger number of `511°`.
+
+![alt text](image/image-5.png)
+
+- Valid range should be `0–359°`, but both `February` and `August` extend up to `409°`.
+- Values `>360°` is outlier, probably caused by bad AIS transmission.
+- Both `February` and `August` show a similar overall pattern. However, `August` has more data volume, result in sharper spike and more pronounced distribution peak in the histogram.
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
