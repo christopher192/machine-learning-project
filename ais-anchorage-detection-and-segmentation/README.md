@@ -81,12 +81,14 @@ Majority of AIS ship speed fall below `30 knot`.
 - Values `>360°` is outlier, probably caused by bad AIS transmission.
 - Both `February` and `August` show a similar overall pattern. However, `August` has more data volume, result in sharper spike and more pronounced distribution peak in the histogram.
 
-3. `H3` Application
+3. Visualization
+    - 
+
+4. `H3` Application
     - Choose suitable resolution, city/port scale works well at `res 7–9`.
         - `res7` = `5.3 km²/hex`.
         - `res8` = `0.75 km²/hex` → `Start here`.
-        - `res9` = `0.11 km²/hex`. 
-    - 
+        - `res9` = `0.11 km²/hex`.
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
