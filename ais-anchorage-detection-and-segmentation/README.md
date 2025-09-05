@@ -16,6 +16,8 @@ Anchorage can take many shapes and sizes, such as `half-moon`, `full-moon`, or e
 ### Technology Used
 1. `Duckdb` - Handle and query AIS data, AIS consist of million of record, and require fast processing.
 2. `H3` - Convert AIS lat/lon into a hexagonal grid system so vessel movement pattern can be analyzed and visualized more effectively.
+3. `Kepler` - Geospatial data visualization tool.
+4. `Foursquare` (formerly `Unfolded.ai`) – A cloud-hosted, extended version of `Kepler.gl` with built-in `H3` support, collaboration, publishing, and scalable data handling. More suitable for larger dataset and heavy workload compared to the standalone open-source `Kepler.gl`.
 
 ### Dataset Understanding
 1. `TIMESTAMP` - Exact time when the AIS message was received.
@@ -82,7 +84,17 @@ Majority of AIS ship speed fall below `30 knot`.
 - Both `February` and `August` show a similar overall pattern. However, `August` has more data volume, result in sharper spike and more pronounced distribution peak in the histogram.
 
 3. Visualization
-    - 
+    - Threshold Rule
+        - `Berthing`: SOG ≤ `0.2 knot`.
+        - `Anchorage`: SOG ≤ `0.6 knot`, (allowing drift, tide, wind, etc).
+        - `Underway` (slow/maneuvering): `0.6 knot` – `4.0 knot`.
+        - `Underway` (normal): ≥ `4.0 knot`. 
+    - Dwell Time (minimum duration per event)
+        - `Berthing` ≥ 15 min.
+        - `Anchorage` ≥ 30 min.
+    - Displacement Check
+        - `Berthing`: float within 100 m.
+        - `Anchorage`: swing within 300 – 600 m.
 
 4. `H3` Application
     - Choose suitable resolution, city/port scale works well at `res 7–9`.
