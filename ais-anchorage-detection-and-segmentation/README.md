@@ -90,14 +90,15 @@ Majority of AIS ship speed fall below `30 knot`.
         - `Underway` (slow/maneuvering): `0.6 knot` – `4.0 knot`.
         - `Underway` (normal): ≥ `4.0 knot`. 
     - Dwell Time (minimum duration per event)
-        - `Berthing` ≥ 15 min.
-        - `Anchorage` ≥ 30 min.
+        - `Berthing`: ≥ 15 min.
+        - `Anchorage`: ≥ 30 min.
     - Displacement Check
         - `Berthing`: float within 100 m.
         - `Anchorage`: swing within 300 – 600 m.
 
 4. `H3` Application
-    - Choose suitable resolution, city/port scale works well at `res 7–9`.
+    - Use hexagon to aggregate AIS point into spatial bin.
+    - Choose suitable resolution, city/port scale work well at `res 7–9`.
         - `res7` = `5.3 km²/hex`.
         - `res8` = `0.75 km²/hex` → `Start here`.
         - `res9` = `0.11 km²/hex`.
