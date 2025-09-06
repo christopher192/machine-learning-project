@@ -84,6 +84,7 @@ Majority of AIS ship speed fall below `30 knot`.
 - Both `February` and `August` show a similar overall pattern. However, `August` has more data volume, result in sharper spike and more pronounced distribution peak in the histogram.
 
 3. Visualization
+    - Refer to `split_by_mmsi.ipynb`.
     - Threshold Rule (SOG)
         - `Berthing`: `≤ 0.20`.
         - `Anchorage`/`Drifting`: `0.20` – `≤ 1.00`, (allowing drift, tide, wind, etc).
@@ -108,21 +109,41 @@ Majority of AIS ship speed fall below `30 knot`.
         - Transmission error.
         - Equipment issue.
     - Finding
-        - Detect missing value in `LATITUDE`, `LONGITUDE`, `SPEED`, `HEADING`, and `COURSE`, even though `MMSI` and `TIMESTAMP` are present in those rows.
+        - Detect missing value in `LATITUDE`, `LONGITUDE`, `SPEED`, `HEADING`, and `COURSE`, even though `MMSI` and `TIMESTAMP` are present in those row.
         - `kepler.gl` misidentifying `MMSI` as a timestamp, a prefix `mmsi-***` is added to the `MMSI` field, so can filtering desired vessel.
-        - `Question raised`: Will gap in voyage continuity lead to performance degradation in anchorage detection and segmentation model?
+        - The `static_mmsi` data does not support anchorage detection, as it lack movement, speed, or course information. However, it is useful for providing ship dimension and type.
+        - Question raised
+            - Will gap in voyage continuity lead to performance degradation in anchorage detection and segmentation model?
+            - What is the `step`/ `solution` to fill the missing gap to help restoring voyage continuity?
+            - There is no single `golden rule` to determine `anchorage`, `berthing`, or similar states. Detection depend on a combination of factor such as `speed threshold`, `dwell time`, `course change`, `location context` like port or anchorage zones, etc. Additional information from can support https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a this process.
+
 4. `H3` Application
+    - Refer to `h3_conversion`.
     - Use hexagon to aggregate AIS point into spatial bin.
-    - Choose suitable resolution, city/port scale work well at `res 7–9`.
-        - `res7` = `5.3 km²/hex`.
+    - Choose suitable resolution.
         - `res8` = `0.75 km²/hex` → `Start here`.
         - `res9` = `0.11 km²/hex`.
+        - `res10` = `0.015 km²/hex`.
+    - Finding
+        - Res 8 = Voyage View → Show overall vessel movement and route pattern.
+        - Res 9 = Anchorage View → Highlight vessel cluster in anchorage zone.
+        - Res 10 = Berth View → Provide fine detail for berthing analysis.
+
+Hex Resolution – 8
+![alt text](image/image-7.png)
+
+Hex Resolution – 9
+![alt text](image/image-8.png)
+
+Hex Resolution – 10
+![alt text](image/image-9.png)
 
 5. Model Training
     - Data Preprocessing
         - Remove `outlier`.
         - Drop row with missing value in `LATITUDE`, `LONGITUDE`, `SPEED`, `HEADING`, and `COURSE`.
         - Exclude record with `MMSI = 0`.
+        - `berthing`, `anchoring`, etc flagging.
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
