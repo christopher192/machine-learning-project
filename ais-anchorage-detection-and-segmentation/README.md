@@ -43,7 +43,7 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
 1. Data Conversion
     - For faster querying, the raw `csv` will be converted into `parquet` format. Refer to `convert_csv_to_parquet.ipynb`.
     - Data is saved into `feb_ais`, `aug_ais`, and `static_mmsi` table inside `ais.duckdb`.
-    - Combined table `ais` (Feb + Aug) is created.
+    - Combined table `ais` (Feb + Aug) - Optional.
 2. Data Analytics
     - February
         - `TIMESTAMP` count = `~106M`, but `LATITUDE/LONGITUDE` only `~90M` → `~16M` rows are missing. 
@@ -55,7 +55,7 @@ Illustration showing direction on a ship: `Bow (front)`, `Stern (back)`, `Port (
         - `MMSI` alway has `9-digit` positive integer.
     - `TO_BOW`, `TO_STERN`, `TO_PORT`, `TO_STARBOARD` min = 0 → likely missing dimension value
         - Probably mean the vessel has not reported its size or the AIS unit wasn’t configured properly.
-        - Possible for very small boat (tug, fishing vessel, ) to have tiny value.
+        - Possible for very small boat (tug, fishing vessel, etc) to have tiny value.
     - `SPEED`, `HEADING`, `COURSE` → 0
         - `SPEED`: Likely valid (anchored/stopped), not missing.
         - `HEADING`: Bow pointing to north, can be real or no heading sensor.
@@ -84,24 +84,45 @@ Majority of AIS ship speed fall below `30 knot`.
 - Both `February` and `August` show a similar overall pattern. However, `August` has more data volume, result in sharper spike and more pronounced distribution peak in the histogram.
 
 3. Visualization
-    - Threshold Rule
-        - `Berthing`: SOG ≤ `0.2 knot`.
-        - `Anchorage`: SOG ≤ `0.6 knot`, (allowing drift, tide, wind, etc).
-        - `Underway` (slow/maneuvering): `0.6 knot` – `4.0 knot`.
-        - `Underway` (normal): ≥ `4.0 knot`. 
+    - Threshold Rule (SOG)
+        - `Berthing`: `≤ 0.20`.
+        - `Anchorage`/`Drifting`: `0.20` – `≤ 1.00`, (allowing drift, tide, wind, etc).
+        - `Maneuvering`: `> 1` – `≤ 5`.
+        - `Transit (slow underway)`: `> 5` – `≤ 10`.
+        - `Cruising`: `> 10` – `≤ 20`.
+        - `High-speed`: `> 20`.
     - Dwell Time (minimum duration per event)
         - `Berthing`: ≥ 15 min.
         - `Anchorage`: ≥ 30 min.
     - Displacement Check
-        - `Berthing`: float within 100 m.
-        - `Anchorage`: swing within 300 – 600 m.
+        - `Berthing`: float within 100m.
+        - `Anchorage`: swing within 300 – 600m.
 
+    ![alt text](image/image-6.png)
+    - Sample MMSI `246714000` extracted from `feb_ais`, chosen because it has the highest number of row, to enable clearer visualization in `kepler.gl`.
+    - From the visualization, the ship is travelling from `Singapore (Pulau Ubin area)` to `Batam Island (Indonesia)` across the `Singapore Strait`.
+    - For better anchorage recognition, threshold set at `0 - 0.6`, `0.6 - 1`, `> 1`.
+    - The red dot in the image indicate potential anchorage location `SOG < 0.6`.
+    - Missing `LATITUDE` & `LONGITUDE` values while ship is travelling.
+        - Signal loss.
+        - Transmission error.
+        - Equipment issue.
+    - Finding
+        - Detect missing value in `LATITUDE`, `LONGITUDE`, `SPEED`, `HEADING`, and `COURSE`, even though `MMSI` and `TIMESTAMP` are present in those rows.
+        - `kepler.gl` misidentifying `MMSI` as a timestamp, a prefix `mmsi-***` is added to the `MMSI` field, so can filtering desired vessel.
+        - `Question raised`: Will gap in voyage continuity lead to performance degradation in anchorage detection and segmentation model?
 4. `H3` Application
     - Use hexagon to aggregate AIS point into spatial bin.
     - Choose suitable resolution, city/port scale work well at `res 7–9`.
         - `res7` = `5.3 km²/hex`.
         - `res8` = `0.75 km²/hex` → `Start here`.
         - `res9` = `0.11 km²/hex`.
+
+5. Model Training
+    - Data Preprocessing
+        - Remove `outlier`.
+        - Drop row with missing value in `LATITUDE`, `LONGITUDE`, `SPEED`, `HEADING`, and `COURSE`.
+        - Exclude record with `MMSI = 0`.
 
 ### Reference
 1. Technical documentation explaining how to decode and interpret AIS message transmitted by ship: https://gpsd.gitlab.io/gpsd/AIVDM.html#_types_1_2_and_3_position_report_class_a
