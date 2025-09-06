@@ -128,6 +128,7 @@ Majority of AIS ship speed fall below `30 knot`.
         - Res 8 = Voyage View → Show overall vessel movement and route pattern.
         - Res 9 = Anchorage View → Highlight vessel cluster in anchorage zone.
         - Res 10 = Berth View → Provide fine detail for berthing analysis.
+    - Loading hex-aggregated data into `kepler.gl` is noticeably faster compared to loading the full raw AIS dataset. Hex bin reduce the number of point and simplify visualization.
 
 Hex Resolution – 8
 ![alt text](image/image-7.png)
